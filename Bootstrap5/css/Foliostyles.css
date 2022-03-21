@@ -198,7 +198,7 @@ nav {
 #hero {
     width: 100%;
     height: 100vh;
-   background-image: url("./images/images/folio_headerpic.jpg") top right no-repeat;
+   background-image: url("folio_headerpic.jpg") top right no-repeat;
     /*background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../Site/images/img3_edit.jpg") top right no-repeat;*/
     background-size: cover;
     position: relative;
