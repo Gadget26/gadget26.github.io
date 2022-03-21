@@ -1,4 +1,4 @@
-﻿/*--------------------------------------------------------------
+/*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&display=swap");
@@ -198,7 +198,7 @@ nav {
 #hero {
     width: 100%;
     height: 100vh;
-   background: url("../../images/folio_headerpic.jpg") top right no-repeat;
+   background: url("/images/folio_headerpic.jpg") top right no-repeat;
     /*background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../Site/images/img3_edit.jpg") top right no-repeat;*/
     background-size: cover;
     position: relative;
