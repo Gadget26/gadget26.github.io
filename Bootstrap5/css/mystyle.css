@@ -1,0 +1,581 @@
+﻿/*--------------------------------------------------------------
+# Imports
+--------------------------------------------------------------*/
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tangerine&display=swap');
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+
+body {
+    font-family: "Open Sans", sans-serif;
+    color: #272829;
+    background-color: #fff;
+}
+
+a {
+    color: #0563bb;
+    text-decoration: none;
+}
+
+    a:hover {
+        color: #067ded;
+        text-decoration: none;
+    }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Raleway", sans-serif;
+}
+
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+    [data-aos-delay] {
+        transition-delay: 0 !important;
+    }
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 9997;
+    transition: all 0.5s;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+@media (max-width: 992px) {
+    #header {
+        width: 300px;
+        background: #fff;
+        border-right: 1px solid #e6e9ec;
+        left: -300px;
+    }
+}
+
+@media (min-width: 992px) {
+    #main {
+        margin-left: 100px;
+    }
+}
+
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/**
+* Desktop Navigation 
+*/
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 50px;
+    top: 5%;
+    z-index: 100;
+    justify-content: center;
+    
+}
+
+    .navbar button {
+        background-color: indigo;
+        color: white;
+        font-size: 20px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        cursor: pointer;
+        margin-right: 40px;
+        /*border-radius: 50px 5px 50px 50px;*/
+    }
+
+    .navbar button:hover {
+        color: gold;
+    }
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: red;
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 50%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+    .overlay a:hover, .overlay a:focus {
+        color: #f1f1f1;
+    }
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 30px;
+}
+
+@media screen and (max-height: 450px) {
+    .overlay a {
+        font-size: 20px
+    }
+
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+/**
+* Mobile Navigation 
+*/
+
+/*--------------------------------------------------------------
+# Social Icons
+--------------------------------------------------------------*/
+.socials {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 1%;
+    top: 5%; 
+    justify-content: center;
+}
+
+.socicon {
+    width: 3rem;
+    height: 3rem;
+    top: 20px;
+    margin-bottom: 10px;
+    background-color: indigo;
+    justify-content: center;
+    color: white;
+    border-radius: 50px 50px 50px 50px;
+}
+
+    .socicon:hover {
+        color: gold;
+    }
+
+/*--------------------------------------------------------------
+# Carousel
+--------------------------------------------------------------*/
+#myCarousel {
+    width: 100%;
+    height: 40vh;
+    background-color: transparent;
+    overflow: hidden;
+    position: relative;
+}
+
+    #myCarousel .carousel, #myCarousel .carousel-inner, #myCarousel .carousel-item, #myCarousel .carousel-item::before {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    #myCarousel .carousel-container {
+        position: absolute;
+    margin: 20px;
+    width: auto;
+    }
+
+    #myCarousel .carousel-content {
+        background: rgba(4, 4, 4, 0.7);
+        padding: 20px;
+        color: #fff;
+        border-top: 5px solid #1bbd36;
+    }
+
+        #myCarousel .carousel-content h2 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+    #myCarousel .btn-get-started {
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        letter-spacing: 1px;
+        display: inline-block;
+        padding: 12px 32px;
+        border-radius: 4px;
+        transition: 0.5s;
+        line-height: 1;
+        margin: 10px;
+        color: #fff;
+        -webkit-animation-delay: 0.8s;
+        animation-delay: 0.8s;
+        border: 2px solid #1bbd36;
+    }
+
+        #hero .btn-get-started:hover {
+            background: #1bbd36;
+            color: #fff;
+            text-decoration: none;
+        }
+
+/* Declare heights because of positioning of img element */
+/*#myCarousel .carousel-item {
+    height: 32rem;
+    margin-top: 75px;
+    background-color: #777;
+}*/
+
+#myCarousel .carousel-inner .carousel-item {
+    transition-property: opacity;
+    background-position: center top;
+    height: 32rem;
+    /*margin-top: 75px;*/
+    background-color: #777;
+}
+
+    #myCarousel .carousel-inner .carousel-item > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        height: 32rem;
+    }
+
+#myCarousel .carousel-inner .carousel-item,
+#myCarousel .carousel-inner .active.carousel-item-start,
+#myCarousel .carousel-inner .active.carousel-item-end {
+    opacity: 0;
+}
+
+#myCarousel .carousel-inner .active,
+#myCarousel .carousel-inner .carousel-item-next.carousel-item-start,
+#myCarousel .carousel-inner .carousel-item-prev.carousel-item-end {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+    #myCarousel .carousel-inner .carousel-item-next,
+    #myCarousel .carousel-inner .carousel-item-prev,
+    #myCarousel .carousel-inner .active.carousel-item-start,
+    #myCarousel .carousel-inner .active.carousel-item-end {
+        left: 0;
+        transform: translate3d(0, 0, 0);
+    }
+
+#myCarousel .carousel-control-next-icon, #myCarousel .carousel-control-prev-icon {
+    background: none;
+    font-size: 30px;
+    line-height: 0;
+    width: auto;
+    height: auto;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
+    transition: 0.3s;
+    color: rgba(255, 255, 255, 0.6);
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    #myCarousel .carousel-control-next-icon:hover, #myCarousel .carousel-control-prev-icon:hover {
+        background: rgba(255, 255, 255, 0.6);
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+#myCarousel .carousel-indicators li {
+    cursor: pointer;
+    background: #fff;
+    overflow: hidden;
+    border: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50px;
+    opacity: .6;
+    transition: 0.3s;
+}
+
+    #myCarousel .carousel-indicators li.active {
+        opacity: 1;
+        background: gold;
+    }
+
+@media (min-width: 992px) {
+    #myCarousel .carousel-content {
+        width: 20%;
+    }
+
+    #myCarousel .carousel-control-prev, #myCarousel .carousel-control-next {
+        width: 5%;
+    }
+}
+
+/*@media (max-width: 992px) {
+    #myCarousel .carousel-container {
+        top: 58px;
+    }
+
+    #myCarousel .carousel-content h2 {
+        margin-bottom: 15px;
+        font-size: 22px;
+    }
+
+    #myCarousel .carousel-content p {
+        font-size: 15px;
+    }
+}*/
+
+@media (min-height: 992px) {
+    #myCarousel {
+        height: 50vh;
+    }
+}
+
+
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+    padding: 60px 0;
+    overflow: hidden;
+}
+
+.section-bg {
+    background-color: #f7f7f7;
+}
+
+.section-title {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+    .section-title h2 {
+        font-size: 32px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        position: relative;
+    }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: #1bbd36;
+            bottom: 0;
+            left: calc(50% - 25px);
+        }
+
+    .section-title p {
+        margin-bottom: 0;
+    }
+
+/*--------------------------------------------------------------
+# About
+--------------------------------------------------------------*/
+.about .content h3 {
+    font-weight: 700;
+    font-size: 50px;
+    margin-bottom: 20px;
+    padding-bottom: 0px;
+    padding-left: 20px;
+    text-align: center;
+    color: purple;
+    font-family: 'Tangerine', serif;
+    font-size: 72px;
+    text-shadow: 4px 4px 4px #aaa;
+}
+
+.about .content p {
+    font-size: 15px;
+    padding-left: 20px;
+}
+
+.about .content ul {
+    list-style: none;
+    padding: 0;
+}
+
+    .about .content ul li {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .about .content ul strong {
+        margin-right: 10px;
+    }
+
+    .about .content ul i {
+        font-size: 16px;
+        margin-right: 5px;
+        color: #0563bb;
+        line-height: 0;
+    }
+
+.about .content p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 772px) {
+    .about img {
+        margin: 0 auto;
+    }
+}
+
+/*--------------------------------------------------------------
+# Services
+--------------------------------------------------------------*/
+.service h3 {
+    font-weight: 700;
+    font-size: 50px;
+    margin-bottom: 20px;
+    padding-bottom: 0px;
+    padding-left: 20px;
+    text-align: center;
+    color: purple;
+    font-family: 'Tangerine', serif;
+    font-size: 72px;
+    text-shadow: 4px 4px 4px #aaa;
+}
+
+.service .content p {
+    font-size: 15px;
+    padding-left: 20px;
+}
+
+.service .content ul {
+    list-style: none;
+    padding: 0;
+}
+
+    .service .content ul li {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .service .content ul strong {
+        margin-right: 10px;
+    }
+
+    .service .content ul i {
+        font-size: 16px;
+        margin-right: 5px;
+        color: #0563bb;
+        line-height: 0;
+    }
+
+.service .content p:last-child {
+    margin-bottom: 0;
+}
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.service .flip-card {
+    background-color: transparent;
+    width: 250px;
+    height: 200px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.service  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.service .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.service .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.service .flip-card-front {
+    background-color: #bbb;
+    color: black;
+    position: absolute;
+    background: rgba(0,0,0,0.3);
+}
+
+    .service .flip-card-front img {
+        width: 250px;
+        height: 200px;
+        position: absolute;
+        /*background: rgba(0,0,0,0.3);
+        opacity: 0.3;*/
+    }
+
+    .service .flip-card-front p {
+        width: 250px;
+        height: 200px;
+        font-family: 'Dancing Script', cursive;
+        font-size: 100px;
+        /*font-weight: bold;*/
+        background: rgba(0,0,0,0.3);
+        color: white;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+    }
+
+/* Style the back side */
+.service .flip-card-back {
+    width: 250px;
+    height: 200px;
+    background-color: indigo;
+    color: white;
+    transform: rotateY(180deg);
+    border: 3px solid red;
+}
