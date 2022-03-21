@@ -199,16 +199,16 @@ nav {
     width: 100%;
     height: 100vh;
     /*background:url("../folio_headerpic.jpg") no-repeat center top;*/
-    background-image:url("https://gadget26.github.io/folio_headerpic.jpg");
+    background:url("https://gadget26.github.io/folio_headerpic.jpg") top right no-repeat;
     
-    /*background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../Site/images/img3_edit.jpg") top right no-repeat;
+    /*background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../Site/images/img3_edit.jpg") top right no-repeat;*/
     background-size: cover;
     position: relative;
     box-shadow: 0px 2px 15px 2px var(--primary-shadow);
     
    -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size: cover;*/
+  -o-background-size: cover;
 }
 
 @media (min-width: 992px) {
